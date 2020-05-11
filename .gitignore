@@ -332,19 +332,19 @@ TSWLatexianTemp*
 
 # Dist
 **/build/**
-out/bin/*
-out/cmake/*
-out/doc/*
-out/doc/doxygen/*
-out/obj/*
-out/obj/test/*
+**/out/bin/*
+**/out/cmake/*
+**/out/doc/*
+**/out/doc/doxygen/*
+**/out/obj/*
+**/out/obj/test/*
 
-!out/bin/.gitkeep
-!out/cmake/.gitkeep
-!out/doc/.gitkeep
-!out/doc/doxygen/.gitkeep
-!out/obj/.gitkeep
-!out/obj/test/.gitkeep
+!**/out/bin/.gitkeep
+!**/out/cmake/.gitkeep
+!**/out/doc/.gitkeep
+!**/out/doc/doxygen/.gitkeep
+!**/out/obj/.gitkeep
+!**/out/obj/test/.gitkeep
 data/Ch9Ex2Out.txt
 **/tmp/**
 
