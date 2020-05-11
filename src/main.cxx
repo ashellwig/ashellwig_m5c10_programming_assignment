@@ -14,12 +14,24 @@
 
 #include "../include/book.hh"
 #include <fstream>  // std::ifstream, std::ofstream
-#include <iomanip>  // std::setw, std::setprecision
 #include <iostream> // std::cin, std::cout
 #include <string>   // std::string
 
+using namespace std;
+
+void getBookData(book::BookType books[], int &noOfBooks);
+void printBookData(book::BookType books[], int noOfBooks);
+void searchBookData(book::BookType books[], int bookCount);
+void searchBookDataByISBN(book::BookType books[], int bookCount, string ISBN,
+                          int &loc);
+void searchBookDataByTitle(book::BookType books[], int bookCount, string title,
+                           int &loc);
+void updateCopiesInStock(book::BookType books[], int bookCount);
+void showMenu();
+void subMenu();
+
 int main() {
-  BookType books[100];
+  book::BookType books[100];
 
   int numberOfBooks = 0;
 
@@ -64,7 +76,7 @@ int main() {
   return 0;
 }
 
-void getBookData(BookType books[], int &noOfBooks) {
+void getBookData(book::BookType books[], int &noOfBooks) {
   string title;
   string ISBN;
   string Publisher;
@@ -105,7 +117,7 @@ void getBookData(BookType books[], int &noOfBooks) {
   }
 }
 
-void printBookData(BookType books[], int noOfBooks) {
+void printBookData(book::BookType books[], int noOfBooks) {
   int i;
 
   for (i = 0; i < noOfBooks; i++) {
@@ -114,7 +126,7 @@ void printBookData(BookType books[], int noOfBooks) {
   }
 }
 
-void searchBookDataByISBN(BookType books[], int bookCount, string ISBN,
+void searchBookDataByISBN(book::BookType books[], int bookCount, string ISBN,
                           int &loc) {
   int i;
   loc = -1;
@@ -126,7 +138,7 @@ void searchBookDataByISBN(BookType books[], int bookCount, string ISBN,
     }
 }
 
-void searchBookDataByTitle(BookType books[], int bookCount, string title,
+void searchBookDataByTitle(book::BookType books[], int bookCount, string title,
                            int &loc) {
   int i;
   loc = -1;
@@ -138,7 +150,7 @@ void searchBookDataByTitle(BookType books[], int bookCount, string title,
     }
 }
 
-void searchBookData(BookType books[], int bookCount) {
+void searchBookData(book::BookType books[], int bookCount) {
   int choice;
   char ch;
 
@@ -175,7 +187,7 @@ void searchBookData(BookType books[], int bookCount) {
   }
 }
 
-void updateCopiesInStock(BookType books[], int bookCount) {
+void updateCopiesInStock(book::BookType books[], int bookCount) {
   int choice;
 
   int loc;
