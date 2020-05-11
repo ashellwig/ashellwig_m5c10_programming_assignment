@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "includePath": [
+        "${workspaceRoot}",
+        "${workspaceRoot}/include"
+      ],
+      "defines": [
+        "DEBUG=1"
+      ],
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/g++",
+      "browse": {
+        "databaseFilename": "${default}",
+        "path": [
+          "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0",
+          "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu",
+          "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward",
+          "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include",
+          "/usr/local/include",
+          "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed",
+          "/usr/include",
+          "${workspaceRoot}",
+          "${workspaceRoot}/include/catch2",
+          "${workspaceRoot}/include/cxxopts"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "compilerArgs": [
+        "-Wall",
+        "-x",
+        "c++",
+        "-std=c++2a",
+        "-Iinclude",
+        "-isystem share/include/catch2",
+        "-isystem share/include/cxxopts"
+      ],
+      "cStandard": "c11",
+      "cppStandard": "c++20"
+    }
+  ],
+  "version": 4
+}

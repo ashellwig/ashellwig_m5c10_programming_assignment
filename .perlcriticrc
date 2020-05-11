@@ -1,0 +1,7 @@
+[ -Modules::RequireFilenameMatchesPackage ]
+[ -TestingAndDebugging::RequireTestLabels ]
+[ -NamingConventions::Capitalization ]
+[ -ValuesAndExpressions::ProhibitMagicNumbers ]
+[ -TestingAndDebugging::RequireUseStrict ]
+[ -TestingAndDebugging::RequireUseWarnings ]
+[ -Variables::ProhibitPackageVars ]

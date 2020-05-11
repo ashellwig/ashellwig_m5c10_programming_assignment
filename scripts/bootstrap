@@ -1,0 +1,109 @@
+#!/bin/bash
+# @file bootstrap.sh
+# @author Ashton Hellwig <ahellwig.dev@gmail.com>
+# @brief Create the necessary directories for building and running the program.
+#
+
+## --- Script Options ---
+set -o errexit
+set -o pipefail
+set -o nounset
+
+## --- Variables ---
+### DIRECTORIES
+declare -g -x bootstrap_DIR
+bootstrap_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+
+# shellcheck source=SCRIPTDIR/lib/lib.sh
+. "${bootstrap_DIR}/lib/lib.sh"
+
+declare -g -x project_source_DIR
+project_source_DIR="$(dirname "${bootstrap_DIR}")"
+
+## --- Actions ---
+function bootstrap_usage() {
+  echo "$0 usage:" \
+    && grep "[[:space:]].)\ #" "$0" \
+    | sed 's/#//' | sed -r 's/([a-z])\)/-\1/'
+  exit 0
+}
+
+function bootstrap_clean_and_create_dirs() {
+  declare -a -g dirs_to_create
+  dirs_to_create=(
+    "${project_source_DIR}/"
+  )
+
+  for dir in "${dirs_to_create[@]}"; do
+    if [[ -d "${dir}" ]]; then
+      ### Clean Directories
+      if [[ "$verbose" -eq 1 ]]; then
+        __log_msg -i -m "Removing directory: ${dir}"
+      fi
+      # TODO: rm -rf "${dir}" || return 1
+      if (($? != 0)); then
+        __log_msg -e -m "Failed to clean the directories."
+      fi
+      ### Create Directories
+      if [[ "$verbose" -eq 1 ]]; then
+        __log_msg -i -m "Creating directory: ${dir}"
+      fi
+      # TODO: mkdir -p "${dir}"
+      if (($? != 0)); then
+        __log_msg -e -m "Failed to create the directories."
+      fi
+    fi
+  done
+}
+
+function bootstrap_show_help() {
+  true
+}
+
+## --- Main Function ---
+function bootstrap_main() {
+  ### Local Variables Also Needed in the Global Scope
+  declare -g -i bootstrap_verbose
+  verbose=0
+  declare -g -i bootstrap_clean_and_create
+  clean_and_create=0
+  declare -g -i bootstrap_help
+  bootstrap_help=0
+
+  ### Implement `getopts`
+
+}
+
+if [[ "${bootstrap_help}" -eq 1 ]]; then
+  bootstrap_usage
+fi
+
+## --- Cleanup ---
+### Variables
+if [[ "$verbose" -eq 1 ]]; then
+  __log_msg -i -m 'Unsetting script variables'
+fi
+unset bootstrap_DIR
+unset project_source_DIR
+unset bootstrap_verbose
+unset bootstrap_help
+unset bootstrap_clean_and_create
+### Function Helpers
+if [[ "$verbose" -eq 1 ]]; then
+  __log_msg -i -m 'Unsetting script function helpers'
+fi
+### Functions
+if [[ "$verbose" -eq 1 ]]; then
+  __log_msg -i -m 'Unsetting script functions'
+fi
+unset bootstrap_parse_opts
+unset bootstrap_usage
+unset bootstrap_clean_and_create_dirs
+unset bootstrap_show_help
+unset bootstrap_main
+
+### Terminate peacefully
+__log_msg -i -m 'Successfully completed bootstrap!'
+true
+
+# vim: set et ts=2 sw=2 ft=bash

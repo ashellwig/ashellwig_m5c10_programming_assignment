@@ -1,0 +1,4 @@
+# Shell
+disable=2034 # https://github.com/koalaman/shellcheck/wiki/SC2034
+disable=2020 # https://github.com/koalaman/shellcheck/wiki/SC2020
+disable=2181 # https://github.com/koalaman/shellcheck/wiki/SC2181

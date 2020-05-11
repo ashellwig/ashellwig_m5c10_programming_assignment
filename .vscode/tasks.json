@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // --- DEFAULT BUILD  TASK---
+        {
+            "label": "Debug: Build",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "make",
+            "args": [
+                "debug"
+            ],
+            "linux": {
+                "problemMatcher": [
+                    "$gcc"
+                ]
+            },
+            "windows": {
+                "problemMatcher": [
+                    "$msCompile"
+                ]
+            }
+        },
+        // --- DEFAULT TEST TASK---
+        {
+            "label": "Debug: Test",
+            "type": "shell",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "command": "make",
+            "args": [
+                "unit-test"
+            ],
+            "linux": {
+                "problemMatcher": [
+                    "$gcc"
+                ]
+            },
+            "windows": {
+                "problemMatcher": [
+                    "$msCompile"
+                ]
+            }
+        }
+    ]
+}

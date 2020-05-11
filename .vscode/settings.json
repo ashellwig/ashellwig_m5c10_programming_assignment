@@ -1,0 +1,418 @@
+// {
+// "python.formatting.provider": "yapf",
+// "python.linting.enabled": false,
+// "cSpell.enabled": false
+// }
+{
+    /* JSON */
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnSave": true
+    },
+    /* C and C++ */
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true,
+            "source.organizeImports": true
+        }
+    },
+    "C_Cpp.autoAddFileAssociations": true,
+    "C_Cpp.configurationWarnings": "Enabled",
+    "C_Cpp.default.enableConfigurationSquiggles": true,
+    "C_Cpp.default.configurationProvider": "${default}",
+    /// Formatting
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "clang-format.executable": "clang-format",
+    "clang-format.language.cpp.enable": true,
+    "clang-format.language.cpp.style": "file",
+    "clang-format.style": "file",
+    "clang.completion.enable": true,
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.compilerPath": "/bin/g++",
+    // Compiler Options
+    "C_Cpp.default.systemIncludePath": [
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include",
+        "/usr/local/include",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed",
+        "/usr/include",
+        "${workspaceFolder}/include/catch2",
+        "${workspaceFolder}/include/cxxopts"
+    ],
+    "C_Cpp.default.compilerArgs": [
+        "-xc++",
+        "-Wall",
+        "-std=gnu++2a", // Change this to -std=c++20 if llvm (clang++)
+        "-DDEBUG=1",
+        "-Iinclude",
+        "-isystem include/catch2",
+        "-isystem include/cxxopts"
+    ],
+    "C_Cpp.clang_format_sortIncludes": true,
+    // Doxygen
+    "doxdocgen.generic.briefTemplate": "@brief {text} ",
+    "doxdocgen.generic.paramTemplate": "@param {param} ",
+    "doxdocgen.generic.returnTemplate": "@return {type} ",
+    "doxdocgen.file.fileTemplate": "@file {name}",
+    "doxdocgen.cpp.tparamTemplate": "@tparam {param} ",
+    "doxdocgen.generic.dateTemplate": "@date {date}",
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year} {author} <{email}>"
+    ],
+    "doxdocgen.file.versionTag": "@version 0.1.0",
+    "doxdocgen.generic.authorTag": "@author {author} <{email}>",
+    /* Perl */
+    "perl-toolbox.lint.exec": "/home/ahellwig/perl5/bin/perlcritic",
+    "perl-toolbox.lint.path": "/home/ahellwig/perl5/bin/perlcritic",
+    "perl-toolbox.syntax.includePaths": [
+        "/home/ahellwig/perl5/lib/perl5",
+        "/usr/lib/perl5/5.30/core_perl",
+        "/usr/lib/perl5/5.30/vendor_perl"
+    ],
+    "perl-toolbox.lint.useProfile": true,
+    "perl-toolbox.lint.highlightMode": "word",
+    "perl-toolbox.syntax.enabled": false,
+    "perl-toolbox.syntax.exec": "/usr/bin/perl",
+    "perl-toolbox.syntax.path": "/usr/bin/perl",
+    "perl-toolbox.lint.enabled": false,
+    "simple-perl.perlcritic": "/home/ahellwig/perl5/bin/perlcritic",
+    "simple-perl.perltidy": "/home/ahellwig/perl5/bin/perltidy",
+    "simple-perl.perltidyArgs": [
+        "-q"
+    ],
+    /* Latex */
+    "[latex]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.codeActionsOnSave": {
+            "source.fixAll": false,
+            "source.organizeImports": false
+        }
+    },
+    "[bibtex]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.codeActionsOnSave": {
+            "source.fixAll": false,
+            "source.organizeImports": false
+        }
+    },
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.bibtex-format.tab": "2 spaces",
+    "latex-workshop.bibtex-format.case": "lowercase",
+    "latex-workshop.bibtex-format.handleDuplicates": "Highlight Duplicates",
+    "latex-workshop.bibtex-format.sortby": [
+        "date"
+    ],
+    "latex-workshop.bibtex-format.surround": "Curly braces",
+    // Python
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "python.jediEnabled": false,
+    "python.linting.enabled": false,
+    "python.formatting.provider": "yapf",
+    "python.dataScience.enabled": false,
+    "python.workspaceSymbols.enabled": false,
+    "vsintellicode.python.completionsEnabled": false,
+    /* Shellscript */
+    "[shellscript]": {
+        "files.eol": "\n",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.rulers": [
+            80
+        ]
+    },
+    "shellformat.path": "/home/ahellwig/go/bin/shfmt",
+    "shellformat.flag": "-ln bash -i 2 -bn -ci -sr",
+    "shellformat.effectLanguages": [
+        "shellscript",
+        "dotenv",
+        "ignore",
+        "gitignore"
+    ],
+    "shellcheck.enable": true,
+    "shellcheck.executablePath": "/home/ahellwig/.local/bin/shellcheck",
+    "shellcheck.customArgs": [
+        "--check-sourced",
+        "--color=auto",
+        "--format=tty",
+        "--source-path=SCRIPTDIR/lib/lib.sh",
+        "--shell=bash",
+        "--severity=style",
+        "--external-sources"
+    ],
+    "shellcheck.run": "onSave",
+    "shellcheck.enableQuickFix": false,
+    "shellcheck.exclude": [],
+    "shellcheck.ignorePatterns": {
+        "**/*.zsh": true
+    },
+    "shellcheck.useWorkspaceRootAsCwd": false,
+    /* General Tools */
+    // Terminal
+    "terminal.integrated.inheritEnv": true,
+    // Spell Checker
+    "cSpell.enableFiletypes": [
+        "!yaml",
+        "!asciidoc",
+        "!c",
+        "cpp",
+        "!git-commit",
+        "!html",
+        "latex",
+        "!markdown",
+        "!plaintext",
+        "!restructuredtext",
+        "!text",
+        "!yml",
+        "!json",
+        "!jsonc"
+    ],
+    "cSpell.logLevel": "None",
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/objects/**",
+        ".vscode",
+        ".clang-format",
+        "Doxyfile",
+        "README.md"
+    ],
+    "cSpell.allowCompoundWords": true,
+    "cSpell.words": [
+        "autoreconf",
+        "dndebug",
+        "frcc's",
+        "latexmk",
+        "wpragmas"
+    ],
+    /* License */
+    "licenser.author": "Ashton Hellwig",
+    "licenser.license": "LGPLv3",
+    "licenser.projectName": "ashellwig_m5c10_programming_assignment",
+    "licenser.disableAutoHeaderInsertion": true,
+    /* Files */
+    "files.exclude": {
+        ".tidyall.d": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.aux": true,
+        "**/*.bcf": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.fls": true,
+        "**/*.loa": true,
+        "**/*.log": true,
+        "**/*.lol": true,
+        "**/*.run.xml": true,
+        "**/*.toc": true,
+        "**/*.synctex.gz": true,
+        "**/*.blg": true,
+        "**/*.bbl": true,
+    },
+    "files.associations": {
+        // Data Files
+        "Ch9Ex2*.txt": "plaintext",
+        // Shell Scripts (Executable)
+        "${workspaceFolder}/scripts/bootstrap": "shellscript",
+        // LaTeX
+        ".latexmkrc": "perl",
+        ".perlcriticrc": "perl",
+        ".tidyallrc": "ini",
+        // Misc
+        "*.html": "html",
+        // C++
+        "*.in": "cpp",
+        "iostream": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "hash_map": "cpp",
+        "bit": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "cfenv": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "cstdint": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "regex": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "initializer_list": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "shared_mutex": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "thread": "cpp",
+        "cinttypes": "cpp",
+        "typeinfo": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp",
+        "__bit_reference": "cpp",
+        "__config": "cpp",
+        "__debug": "cpp",
+        "__errc": "cpp",
+        "__functional_base": "cpp",
+        "__hash_table": "cpp",
+        "__locale": "cpp",
+        "__mutex_base": "cpp",
+        "__node_handle": "cpp",
+        "__nullptr": "cpp",
+        "__split_buffer": "cpp",
+        "__string": "cpp",
+        "__threading_support": "cpp",
+        "__tree": "cpp",
+        "__tuple": "cpp",
+        "compare": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "typeindex": "cpp"
+    },
+    // Better Comments
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "///////",
+            "color": "#474747",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        }
+    ],
+    // Spell Checker
+    "cSpell.ignoreWords": [
+        "bloggs",
+        "iinclude",
+        "isystem"
+    ]
+}

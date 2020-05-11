@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Program",
+            "request": "launch",
+            "type": "gdb",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "prettyPrinters",
+            "target": "./out/bin/ashellwig_m5c10_programming_assignment.bin",
+            "arguments": "-i ${workspaceFolder}/data/bookData.txt"
+        }
+    ],
+    "compounds": []
+}
