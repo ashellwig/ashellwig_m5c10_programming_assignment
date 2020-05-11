@@ -42,7 +42,7 @@ LFLAGS := \
 
 # --- Test Variables ---
 TEST_PROGRAM := out/bin/test
-TEST_SRC := test/catch_main.cxx src/book.cxx
+TEST_SRC := src/book.cxx test/00_CatchMain.cxx test/01_TestBookType.cxx
 TEST_INCLUDES := \
 	-Iinclude \
 	-isystem include/cxxopts \
@@ -94,19 +94,19 @@ test: debug
 		-I$(INCLUDES)
 
 	$(CXX) $(TEST_CXXFLAGS) \
-		-c test/catch_main.cxx \
-		-o out/obj/test/catch_main.o \
+		-c test/00_CatchMain.cxx \
+		-o out/obj/test/00_CatchMain.o \
 		$(TEST_INCLUDES)
 
 	$(CXX) $(TEST_CXXFLAGS) \
-		-c test/TestCase.cxx \
-		-o out/obj/test/TestCase.o \
+		-c test/01_TestBookType.cxx \
+		-o out/obj/test/01_TestBookType.o \
 		$(TEST_INCLUDES) -I$(INCLUDES)
 
 	$(CXX) $(TEST_LFLAGS) -o out/bin/test.bin \
 		out/obj/test/book.o \
-		out/obj/test/catch_main.o \
-		out/obj/test/TestCase.o \
+		out/obj/test/00_CatchMain.o \
+		out/obj/test/01_TestBookType.o \
 		$(TEST_INCLUDES) -I$(INCLUDES)
 
 unit-test: test

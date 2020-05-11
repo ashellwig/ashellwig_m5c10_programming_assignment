@@ -1,5 +1,5 @@
 %
-% Module 5 Chapter 9 Program Documentation
+% Module 5 Chapter 10 Program Documentation
 % CSC160-C00: Computer Science I (C++) (Jeffrey Hemmes)
 % Author: Ashton Hellwig
 % Date: 02 April 2020
@@ -182,7 +182,7 @@
   \renewcommand{\baselinestretch}{.9}
 
   %% Title page
-  \title{Chapter 9 Programming Assignment Documentation}
+  \title{Chapter 10 Programming Assignment Documentation}
   \author{Ashton Hellwig}
   \date\today
   \setcounter{tocdepth}{3}
@@ -190,7 +190,7 @@
   %% Subsequent pages
   \lhead{CSC160}
   \rhead{Computer Science I (C++)}
-  \lfoot{M4C8Program}
+  \lfoot{M5C10Program}
   \rfoot{A. Hellwig}
 
 
@@ -208,62 +208,32 @@
   \section{Problem Analysis}
     The problem states:
     \begin{mdframed}[backgroundcolor=green!20]
-      This assignment relates to content from Chapter 9 of the eText.
+      This assignment relates to content from Chapter 10 of the eText.
 
       \textbf{Instructions}\vspace{-8pt}
       \begin{enumerate}
         \item Review the general programming assignment instructions.
         \item Write a program that:
           \begin{enumerate}[label=\Alph*.]
-            \item Allows the user to enter the last names of five candidates in
-              a local election and the number of votes received by each candidate.
-            \item The program should then output each candidate’s name, the
-              number of votes received, and the percentage of the total votes
-              received by the candidate.
-            \item Your program should also output the winner of the election.
-            \item This program must be done using parallel arrays to store the
-              name and number of votes for each candidate.
-            \item The number must be formatted appropriately as shown in the
-              sample output below.
+            \item Placeholder.
           \end{enumerate}
       \end{enumerate}
     \end{mdframed}
 
     \subsection{Data}
       \begin{itemize}
-        \item We need two parallel arrays which should match index$\rightarrow$%
-          index.
-          \begin{itemize}
-            \item |std::string candidateLastName[];| to store the candidate's
-              name.
-            \item |int candidateVotes[];| to store the number of votes received
-              by the candidate.
-          \end{itemize}
+        \item Placeholder.
       \end{itemize}
 
     \subsection{Desired Output}
       \begin{lstlisting}[%
         language=bash,%
         columns=flexible,%
-        caption={ashellwig\_m5c9\_programming\_assignment output %
+        caption={ashellwig\_m5c10\_programming\_assignment output %
           (stdout)},%
         label={desiredoutput:stdout}%
     ]
-Enter candidates name and the votes received by the candidate.
-Smith 12345
-Jones 4567
-Adams 555
-Washington 888888
-Jefferson 456789
-Candidate    Votes Received    % of Total Votes
-Smith           12345               0.91
-Jones            4567               0.34
-Adams             555               0.04
-Washington     888888              65.21
-Jefferson      456789              33.51
-Total            1363144
-The Winner of the Election is Washington
-Press any key to continue...
+echo "TODO!"
   \end{lstlisting}
 
 
@@ -272,7 +242,7 @@ Press any key to continue...
   \section{Algorithm}
     Below is the algorithm for the program.
 
-    \input{tex/m5c9alg.tex} 
+    \input{tex/m5c10alg.tex} 
 
 
   % User Documentation
@@ -294,7 +264,7 @@ Press any key to continue...
             \textbf{with a terminal emulator or command prompt}, this will
             (most likely) mean running:
             \begin{lstlisting}[language=bash]
-cd ~/Downloads/ashellwig_m5c9_programming_assignment
+cd ~/Downloads/ashellwig_m5c10_programming_assignment
             \end{lstlisting}
           \item Compile the program and documentation\footnote{\textbf{Note%
             }: This requires the whole \texttt{texlive} suite as well as
@@ -302,19 +272,22 @@ cd ~/Downloads/ashellwig_m5c9_programming_assignment
             switching to the source directory:
             \begin{lstlisting}[%
               language=bash,%
-              caption={Chapter 9 Program Build Commands},%
+              caption={Chapter 10 Program Build Commands},%
             ]
+# precondition: Must be located in project root
+export INPUT_FILE="${PWD}/data/bookData.txt"
+export OUTPUT_FILE="${PWD}/out/bin/output_data.txt"
+
 make debug
 
-export INPUT_FILE="${PWD}/data/Ch9Ex2/Ch9Ex2Data.txt"
-export OUTPUT_FILE="${PWD}/data/Ch9Ex2OUT.txt"
-
-./out/bin/ashellwig_m5c9_programming_assignment.bin \
+./out/bin/ashellwig_m5c10_programming_assignment.bin \
   -f "${INPUT_FILE}" \
-  -d "${OUTPUT_FILE}"
-cat "${OUTPUT_FILE}"  # Verify contents are present
+  -o "${OUTPUT_FILE}"
 
-make clean-all # Removes object files, binaries, and docs
+
+cat "${OUTPUT_FILE}" # Verify contents are present
+
+make clean-all       # Removes object files, binaries, and docs
             \end{lstlisting}
           \end{enumerate}
       \subsubsection{Bundled Release}
@@ -323,7 +296,7 @@ make clean-all # Removes object files, binaries, and docs
             \textbf{with a terminal emulator or command prompt}, this will
             (most likely) mean running:
             \begin{lstlisting}[language=bash]
-cd ~/Downloads/ashellwig_m5c9_programming_assignment
+cd ~/Downloads/ashellwig_m5c10_programming_assignment
             \end{lstlisting}
           \item To run the program simply issue this within the command
             prompt
@@ -331,7 +304,7 @@ cd ~/Downloads/ashellwig_m5c9_programming_assignment
 export INPUT_FILE="${PWD}/data/Ch9Ex2/Ch9Ex2Data.txt"
 export OUTPUT_FILE="${PWD}/data/Ch9Ex2OUT.txt"
 
-./out/bin/ashellwig_m5c9_programming_assignment.bin \
+./out/bin/ashellwig_m5c10_programming_assignment.bin \
   -f "${INPUT_FILE}" \
   -d "${OUTPUT_FILE}"
 cat "${OUTPUT_FILE}"  # Verify contents are present
@@ -339,7 +312,7 @@ cat "${OUTPUT_FILE}"  # Verify contents are present
         \end{enumerate}
         Of course if preferred, you may also navigate to the build folder in
           file explorer and double click the executable
-          (\texttt{./ashellwig\_m5c9\_programming\_assignment}).
+          (\texttt{./ashellwig\_m5c10\_programming\_assignment}).
 
 
   % Bibliography
@@ -365,14 +338,14 @@ cat "${OUTPUT_FILE}"  # Verify contents are present
       \includegraphics[%
         width={\textwidth}%
       ]{compile.png}
-      \caption{Compiling Chapter 9`s Program}
+      \caption{Compiling Chapter 10`s Program}
       \label{img:compilation}
     \end{figure}
     \begin{figure}[H]
       \includegraphics[%
         width=\textwidth%
       ]{run.png}
-      \caption{Running Chapter 9`s Program}
+      \caption{Running Chapter 10`s Program}
       \label{img:running}
     \end{figure}
 
@@ -393,8 +366,81 @@ cat "${OUTPUT_FILE}"  # Verify contents are present
     \subsection{Unit Test File}
       Below I have included the code used to run the unit test for reference.
 
-      \begin{lstlisting}[language=c++,caption={TestCase.cxx}]
-#include "../include/catch2/catch.hpp"
+      \begin{lstlisting}[language=c++,caption={00\_CatchMain.cxx}]
+// 00_CatchMain.cxx
+
+// In a Catch project with multiple files, dedicate one file to compile the
+// source code of Catch itself and reuse the resulting object file for linking.
+
+// Let Catch provide main():
+#define CATCH_CONFIG_MAIN
+
+#include "../include/catch2/catch.hh"
+
+// That's it
+
+// Compile implementation of Catch for use with files that do contain tests:
+// - g++ -std=c++11 -Wall -I$(CATCH_SINGLE_INCLUDE) -c 000-CatchMain.cpp
+// - cl -EHsc -I%CATCH_SINGLE_INCLUDE% -c 000-CatchMain.cpp
+      \end{lstlisting}
+
+      \begin{lstlisting}[language=c++,caption={01\_TestBookType.cxx}]
+// main() provided in 00_CatchMain.cxx
+
+#include "../include/book.hh" // TBD
+#include "../include/catch2/catch.hh"
+#include "../include/options.hh" // Argument parsing
+#include <fstream>               // std::fstream
+#include <iostream>              // std::cout
+#include <string>                // std::string
+
+class DBConnection {
+public:
+  static DBConnection createConnection(std::string const & /*dbName*/) {
+    return DBConnection();
+  }
+
+  bool executeSQL(std::string const & /*query*/, int const /*id*/,
+                  std::string const &arg) {
+    if (arg.length() == 0) {
+      throw std::logic_error("empty SQL query argument");
+    }
+    return true; // ok
+  }
+};
+
+class UniqueTestsFixture {
+protected:
+  UniqueTestsFixture() : conn(DBConnection::createConnection("myDB")) {}
+
+  int getID() { return ++uniqueID; }
+
+protected:
+  DBConnection conn;
+
+private:
+  static int uniqueID;
+};
+
+int UniqueTestsFixture::uniqueID = 0;
+
+TEST_CASE_METHOD(UniqueTestsFixture, "Create Employee/No Name", "[create]") {
+  REQUIRE_THROWS(conn.executeSQL(
+      "INSERT INTO employee (id, name) VALUES (?, ?)", getID(), ""));
+}
+
+TEST_CASE_METHOD(UniqueTestsFixture, "Create Employee/Normal", "[create]") {
+  REQUIRE(conn.executeSQL("INSERT INTO employee (id, name) VALUES (?, ?)",
+                          getID(), "Joe Bloggs"));
+}
+
+// Compile & run:
+// - g++ -std=c++2a -Wall -Iinclude -isystem include/catch2 -isystem
+// include/cxxopts -o out/bin/test.bin test/01_TestStudentClass.cxx
+// 000-CatchMain.o && 110-Fix-ClassFixture
+// --success
+// - cl -EHsc -I%CATCH_SINGLE_INCLUDE% -Iinclude 110-Fix-ClassFixture.cpp
+// 000-CatchMain.obj && 110-Fix-ClassFixture --success
       \end{lstlisting}
 \end{document}
 

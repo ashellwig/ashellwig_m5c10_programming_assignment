@@ -412,7 +412,10 @@
     // Spell Checker
     "cSpell.ignoreWords": [
         "bloggs",
+        "cxxopts",
+        "fstream",
         "iinclude",
+        "iostream",
         "isystem"
     ]
 }
